@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-//import '/fala_escrita/falaParaEscrita.dart';
+import '/fala_escrita/falaParaEscrita.dart';
 
 class TelaInicial extends StatefulWidget {
   @override
@@ -13,7 +13,46 @@ class _TelaInicial extends State<TelaInicial> {
       appBar: AppBar(
         title: const Text("Voice TOTVS - NLP"),
       ),
-      floatingActionButton: Text("Fala p/ Escrita"),
+      body: Column(
+        children: [
+          Container(
+            padding: const EdgeInsets.only(top: 100, left: 90),
+            child: Row(
+              children: [
+                SizedBox(
+                  height: 40,
+                  width: 300,
+                  child: ElevatedButton(
+                    child: const Text("Voz -> escrita"),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => SpeechScreen()),
+                      );
+                    },
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.only(top: 40, left: 90),
+            child: Row(
+              children: [
+                SizedBox(
+                  height: 40,
+                  width: 300,
+                  child: ElevatedButton(
+                    child: const Text("Escrita -> voz"),
+                    onPressed: () {},
+                  ),
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
+      //),
     );
   }
 }
