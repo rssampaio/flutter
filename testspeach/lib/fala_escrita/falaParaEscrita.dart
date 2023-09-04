@@ -1,10 +1,14 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:avatar_glow/avatar_glow.dart';
 import 'package:highlight_text/highlight_text.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
 
 class SpeechScreen extends StatefulWidget {
+  const SpeechScreen({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _SpeechScreenState createState() => _SpeechScreenState();
 }
 

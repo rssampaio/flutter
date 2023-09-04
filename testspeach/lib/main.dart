@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-//import 'fala_escrita/falaParaEscrita.dart';
 import 'tela_inicial/telaInicial.dart';
 
 void main() {
@@ -16,7 +15,7 @@ class SpecchToText extends StatelessWidget {
       theme: ThemeData(
           primarySwatch: Colors.blueGrey,
           visualDensity: VisualDensity.adaptivePlatformDensity),
-      home: TelaInicial() //SpeechScreen(),
+      home: TelaInicial(),
     );
   }
 }
