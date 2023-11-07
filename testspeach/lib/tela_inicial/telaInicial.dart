@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '/fala_escrita/falaParaEscrita.dart';
+import '/fala_escrita/escritaParaFala.dart';
 
 class TelaInicial extends StatefulWidget {
   @override
@@ -16,7 +17,8 @@ class _TelaInicial extends State<TelaInicial> {
       body: Column(
         children: [
           Container(
-            padding: const EdgeInsets.only(top: 100, left: 90),
+            padding: const EdgeInsets.only(top: 148, left: 50),
+            alignment: Alignment.center,
             child: Row(
               children: [
                 SizedBox(
@@ -36,7 +38,7 @@ class _TelaInicial extends State<TelaInicial> {
             ),
           ),
           Container(
-            padding: EdgeInsets.only(top: 40, left: 90),
+            padding: EdgeInsets.only(top: 60, left: 50),
             child: Row(
               children: [
                 SizedBox(
@@ -44,7 +46,12 @@ class _TelaInicial extends State<TelaInicial> {
                   width: 300,
                   child: ElevatedButton(
                     child: const Text("Escrita -> voz"),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => TextToSpeech()),
+                      );
+                    },
                   ),
                 ),
               ],
