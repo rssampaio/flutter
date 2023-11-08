@@ -15,29 +15,43 @@ class _TextToSpeechState extends State<TextToSpeech> {
   Future speak(String text) async {
     await flutterTts.setLanguage("pt-BR");
     await flutterTts.setPitch(1); // vai de 0.5 até 1.5
-    await flutterTts.speak(text);
+
+    if (text.isNotEmpty) {
+      await flutterTts.speak(text);
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('N.L.P. -> Texto para VOZ'),
+        title: const Text('N.L.P. -> Texto para VOZ'),
       ),
       body: Container(
-        padding: EdgeInsets.only(top: 256, left: 12, right: 12),
+        padding: const EdgeInsets.only(top: 248, left: 12, right: 12),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            TextFormField(
-              controller: _textEditingController,
-              decoration: const InputDecoration(border: OutlineInputBorder()),
+            SizedBox(
+              height: 48,
+              width: 500,
+              child: TextFormField(
+                controller: _textEditingController,
+                decoration: const InputDecoration(border: OutlineInputBorder()),
+              ),
             ),
-            ElevatedButton(
-                child: const Text("Click para Falar"),
-                onPressed: () {
-                  speak(_textEditingController.text);
-                })
+            Padding(
+              padding: const EdgeInsets.only(top: 8),
+              child: SizedBox(
+                height: 40,
+                width: 500,
+                child: ElevatedButton(
+                    child: const Text("Click para Falar"),
+                    onPressed: () {
+                      speak(_textEditingController.text);
+                    }),
+              ),
+            )
           ],
         ),
       ),
